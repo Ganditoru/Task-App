@@ -1,0 +1,66 @@
+<p>{{title}}</p>
+
+<div class="choiche-container">
+    <div class="choiche">
+        <button mat-stroked-button [color]="getButtonColor(1)" (click)="onShowFormat(1)">Show as a list</button>
+    </div>
+    <div class="choiche">
+        <button mat-stroked-button [color]="getButtonColor(2)" (click)="onShowFormat(2)">Show as a table</button>
+    </div>
+    <div class="choiche">
+        <button mat-stroked-button [color]="getButtonColor(3)" (click)="onShowFormat(3)">Add a new Task</button>
+    </div>
+</div>
+
+<div class="view-container">
+    <mat-list *ngIf="isListFormat()" role="list">
+        <mat-list-item role="listitem" *ngFor="let task of taskList">- {{task.title}}</mat-list-item>
+    </mat-list>
+
+
+    <div *ngIf="isTableFormat()" class="table-container">
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef> Id </th>
+                    <td mat-cell *matCellDef="let element">{{element.id}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="title">
+                    <th mat-header-cell *matHeaderCellDef> Title </th>
+                    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef> Description </th>
+                    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                aria-label="Select page of periodic elements">
+            </mat-paginator>
+        </div>
+    </div>
+
+
+    <div *ngIf="isAddTaskFormat()" class="create-container">
+        <div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Title</mat-label>
+                <input matInput placeholder="Enter title" [(ngModel)]="newTask.title">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Description</mat-label>
+                <input matInput placeholder="Enter description" [(ngModel)]="newTask.description">
+            </mat-form-field>
+        </div>
+        <button mat-stroked-button (click)="onCreateTask()">Create task</button>
+    </div>
+</div>

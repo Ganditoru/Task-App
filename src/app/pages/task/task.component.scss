@@ -1,0 +1,22 @@
+:host {
+    .choiche-container {
+        display: flex;
+        padding-bottom: 12px;
+
+        .choiche {
+            padding-right: 12px;
+        }
+    }
+
+    .view-container {
+        padding-left: 12px;
+        .table-container {
+            width: 60vw;
+            padding-left: 12px;
+        }
+
+        .create-container {
+            padding-top: 12px;
+        }
+    }
+}

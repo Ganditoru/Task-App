@@ -11,21 +11,30 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { HighlightDirective } from './shared/directives/highlight.directive';
+import { ImportantPipe } from './shared/pipes/important.pipe';
+import { RouterModule, Routes, provideRouter } from '@angular/router';
+import { HeaderComponent } from './pages/header/header.component';
+import { TaskListComponent } from './pages/task-list/task-list.component';
+import { TaskTableComponent } from './pages/task-table/task-table.component';
+import { TaskAddComponent } from './pages/task-add/task-add.component';
+import { SharedModule } from './shared/modules/shared.module';
+
+const routes: Routes = [
+  { path: 'home', component: TaskComponent },
+  { path: 'task-list', component: TaskListComponent },
+  { path: 'task-table', component: TaskTableComponent },
+  { path: 'task-add', component: TaskAddComponent,  },
+  { path: '**', redirectTo: 'home' },
+];
 
 @NgModule({
-  declarations: [AppComponent, TaskComponent],
+  declarations: [AppComponent, TaskComponent, HighlightDirective, ImportantPipe, HeaderComponent, TaskListComponent, TaskTableComponent, TaskAddComponent],
   imports: [
-    BrowserModule,
-    CommonModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatListModule,
-    MatInputModule,
-    MatButtonModule,
-    MatTableModule,
-    MatPaginatorModule
+    SharedModule,
+    RouterModule,
   ],
-  providers: [],
+  providers: [provideRouter(routes)],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

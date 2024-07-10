@@ -1,0 +1,3 @@
+<mat-list class="list-container" role="list">
+    <mat-list-item role="listitem" *ngFor="let task of taskList" appHighlight>- {{task.title | important }}</mat-list-item>
+</mat-list>

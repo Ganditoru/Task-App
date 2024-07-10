@@ -1,0 +1,15 @@
+<div  class="create-container">
+    <div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Enter title" [(ngModel)]="newTask.title">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="Enter description" [(ngModel)]="newTask.description">
+        </mat-form-field>
+    </div>
+    <button mat-stroked-button (click)="onCreateTask()">Create task</button>
+</div>

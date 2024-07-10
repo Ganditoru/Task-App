@@ -1,0 +1,15 @@
+<div class="header-container">
+    <a routerLink="/homepage" mat-button [ngClass]="taskList.length ? 'special' : ''">{{title}}</a>
+
+    <div class="choiche-container">
+        <div class="choiche">
+            <a routerLink="/task-list" mat-stroked-button>Show as a list</a>
+        </div>
+        <div class="choiche">
+            <a routerLink="/task-table" mat-stroked-button>Show as a table</a>
+        </div>
+        <div class="choiche">
+            <a routerLink="/task-add" mat-stroked-button>Add a new Task</a>
+        </div>
+    </div>
+</div>

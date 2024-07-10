@@ -1,0 +1,22 @@
+:host {
+    .header-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #d1d1d1;
+        padding: 12px;
+
+        .special {
+            font-style: italic;
+        }
+
+        .choiche-container {
+            display: flex;
+    
+            .choiche {
+                padding-right: 12px;
+            }
+        }
+    }
+    
+}

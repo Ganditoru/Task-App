@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Task } from '../task/model/task.model';
-import { TaskService } from '../task/service/task.service';
+import { Task } from '../../model/task.model';
+import { TaskService } from '../../service/task.service';
 import { MatPaginator } from '@angular/material/paginator';
 
 @Component({

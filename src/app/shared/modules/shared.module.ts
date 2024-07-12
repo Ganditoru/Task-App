@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,10 +11,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 @NgModule({
   declarations: [],
   imports: [
-    BrowserModule,
-    CommonModule,
     FormsModule,
-    BrowserAnimationsModule,
     MatListModule,
     MatInputModule,
     MatButtonModule,
@@ -26,10 +19,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatPaginatorModule
   ],
   exports: [
-    BrowserModule,
-    CommonModule,
     FormsModule,
-    BrowserAnimationsModule,
     MatListModule,
     MatInputModule,
     MatButtonModule,
